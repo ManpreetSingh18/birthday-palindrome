@@ -102,13 +102,16 @@ function getNextDate(date){
                 month++; 
             }
         }
-    }else{
-        //check if the days exceeds the max days in month
+        //check for the other months
+    }
+    else{
+        //check if days exceed maxx days in month
         if(day > daysInMonth[month-1]){
             day=1;
             month++;
         }
     }
+
         if(month>12){
             month=1;
             year++;
@@ -138,9 +141,9 @@ function getNextPalindromeDate(date){
 } 
  
  var date={
-    day:11,
-    month: 2,
-    year: 2020 
+    day:8,
+    month: 8,
+    year: 2021 
  }
 console.log(getNextPalindromeDate(date))
 //console.log(isPalindrome(date));
