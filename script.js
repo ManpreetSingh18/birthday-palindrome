@@ -145,7 +145,43 @@ function getNextPalindromeDate(date){
     month: 8,
     year: 2021 
  }
-console.log(getNextPalindromeDate(date))
+//console.log(getNextPalindromeDate(date))
+
+var dateInputRef=document.querySelector('#bday-input');
+var showBtnRef=document.querySelector('#show-btn');
+var resultRef=document.querySelector('#result');
+
+showBtnRef.addEventListener('click',clickHandler);
+
+function clickHandler(){
+    var bdayStr=dateInputRef.value;
+
+    if(bdayStr !== ''){
+        var listOfDate=bdayStr.split('-');
+        //console.log(listOfDate)
+        var date={
+            day:Number(listOfDate[2]),
+            month:Number(listOfDate[1]),
+            year:Number(listOfDate[0])
+        };
+        var isPalindrome=checkPalindromeForAllDateFormat(date);
+
+        if(isPalindrome){
+            resultRef.innerText="Your Birthday is a palindrome !!"
+        }
+        else{
+            var [ctr,nextDate]=getNextPalindromeDate(date);
+
+            resultRef.innerText=`Next Palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year} ,You missed it by ${ctr} days`;
+
+            
+
+        }
+
+
+    }
+}
+
 //console.log(isPalindrome(date));
 
 //12-02-2021
