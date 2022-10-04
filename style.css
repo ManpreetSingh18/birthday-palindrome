@@ -1,8 +1,24 @@
 *{
     text-align: center;
+    background-color: gold;
+    font-size: large;
+    
 }
 #show-btn{
     display: block;
     margin: auto;
     margin-top: 20px;
+}
+h1{
+    font-size: 70px;
+}
+h2{
+    font-size: 30px;
+}
+#main{
+    margin-top: 100px;
+}
+#show-btn{
+    font-size: 15px;
+    border: 4px solid black;
 }
